@@ -2,7 +2,7 @@ import React from 'react';
 import styled from"styled-components";
 import tw from "twin.macro"
 import { Logo } from '../logo';
-
+import { NavItems } from './navItems';
 
 
 const NavbarContainer = styled.div`
@@ -30,5 +30,6 @@ const NavbarContainer = styled.div`
        <LogoContainer>
           <Logo />
        </LogoContainer>
+       <NavItems/>
     </NavbarContainer>
  }

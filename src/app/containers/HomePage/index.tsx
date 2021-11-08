@@ -2,7 +2,8 @@
  import styled from "styled-components";
  import tw from "twin.macro"
 import { NavBar } from "../../componenets/navBar";
- const PageContainer = styled.div`
+ 
+const PageContainer = styled.div`
  ${tw`
  flex
  flex-col
