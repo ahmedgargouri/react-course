@@ -1,23 +1,34 @@
 import React from 'react';
 import styled from"styled-components";
 import tw from "twin.macro"
- const NavbarContainer = styled.div`
- min-height : 68px;
- ${tw `
- w-full
- max-w-2x1
- flex
- flex-row
- items-center
- lg:gb-red-12
- lg:pr-12
- justify-between
- `}
+import { Logo } from '../logo';
+
+
+
+const NavbarContainer = styled.div`
+  min-height: 68px;
+  ${tw`
+    w-full
+    max-w-screen-2xl
+    flex
+    flex-row
+    items-center
+    lg:pl-12
+    lg:pr-12
+    justify-between
+  `};
+`;
+
+ const LogoContainer = styled.div`
+
  `;
+
+
  export function NavBar (){
 
     return <NavbarContainer>
-
-        
+       <LogoContainer>
+          <Logo />
+       </LogoContainer>
     </NavbarContainer>
  }
