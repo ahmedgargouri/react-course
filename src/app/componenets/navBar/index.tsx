@@ -4,10 +4,10 @@ import tw from "twin.macro"
 import { Logo } from '../logo';
 import { NavItems } from './navItems';
 
-
 const NavbarContainer = styled.div`
-  min-height: 68px;
+  min-height: 100px;
   ${tw`
+    min-w-full
     w-full
     max-w-screen-2xl
     flex
@@ -20,12 +20,9 @@ const NavbarContainer = styled.div`
 `;
 
  const LogoContainer = styled.div`
-
  `;
 
-
  export function NavBar (){
-
     return <NavbarContainer>
        <LogoContainer>
           <Logo />
