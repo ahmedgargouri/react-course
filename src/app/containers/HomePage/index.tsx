@@ -2,6 +2,7 @@
  import styled from "styled-components";
  import tw from "twin.macro"
 import { NavBar } from "../../componenets/navBar";
+import { TopSection } from "./topSection";
  
 const PageContainer = styled.div`
  ${tw`
@@ -13,9 +14,9 @@ const PageContainer = styled.div`
  overflow-x-hidden
  `}
  `;
-
  export function HomePage(){
     return <PageContainer>
       <NavBar/>
+      <TopSection/>
     </PageContainer>
  }

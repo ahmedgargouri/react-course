@@ -35,13 +35,11 @@ const NavItem = styled.li<{menu ?: any}>`
     `}
     `};
   `;
-
 export function NavItems() {
 
 const isMobile = useMediaQuery({maxWidth : SCREENS.sm })
     if(isMobile)
     return(
-        
             <Menu right styles = {menuStyles}>
             <ListContainer>
             <NavItem menu>
@@ -59,7 +57,6 @@ const isMobile = useMediaQuery({maxWidth : SCREENS.sm })
             </ListContainer>
             </Menu>
         )
-
     return(
         <ListContainer>
        <NavItem>
