@@ -4,6 +4,7 @@ import tw from "twin.macro";
 import MclarenCarImg from "../../../assets/images/mclaren-orange-big.png";
 import BlobImg from "../../../assets/images/blob.svg";
 import { SCREENS } from "../../componenets/responsive";
+import { Button } from "../../componenets/button";
 
 const TopSectionContainer = styled.div`
   min-height: 400px;
@@ -95,7 +96,7 @@ const BlobContainer = styled.div`
   @media (min-width: ${SCREENS.xl}) {
     width: 70em;
     max-height: 30em;
-    right: -10em;
+    right: -15em;
     top: -25em;
     transform: rotate(-20deg);
   }
@@ -130,29 +131,39 @@ const StandaloneCar = styled.div`
     right: -13em;
     top: -9em;
   }
-  
+`;
+const ButtonsContainer = styled.div`
+  ${tw`
+    flex
+    flex-wrap
+    mt-4
+  `};
 `;
 
-export function TopSection() {
-    return (
-        <TopSectionContainer>
-            <LeftContainer>
-                <Slogan>Rent The Best Qulity Car's With Us</Slogan>
-                <Description>
-                    Always choose the best car from our local stores or order it remotely
-                    at the best price for you and get the best quality cars for as long as
-                    you like
-                </Description>
-            </LeftContainer>
-            <RightContainer>
-                <BlobContainer>
-                    <img src={BlobImg} />
-                </BlobContainer>
-                <StandaloneCar>
-                    <img src={MclarenCarImg} />
-                </StandaloneCar>
-            </RightContainer>
-        </TopSectionContainer>
 
-    )
+export function TopSection() {
+  return (
+    <TopSectionContainer>
+      <LeftContainer>
+        <Slogan>Rent The Best Qulity Car's With Us</Slogan>
+        <Description>
+          Always choose the best car from our local stores or order it remotely
+          at the best price for you and get the best quality cars for as long as
+          you like
+        </Description>
+        <ButtonsContainer>
+          <Button theme={"filled "} text={"Rent Your Car "} />
+          <Button theme={"outlined"} text={"Sell Your Car "} />
+        </ButtonsContainer>
+      </LeftContainer>
+      <RightContainer>
+        <BlobContainer>
+          <img src={BlobImg} />
+        </BlobContainer>
+        <StandaloneCar>
+          <img src={MclarenCarImg} />
+        </StandaloneCar>
+      </RightContainer>
+    </TopSectionContainer>
+  )
 }
