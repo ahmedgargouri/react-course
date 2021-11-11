@@ -1,9 +1,9 @@
  import React from "react"
  import styled from "styled-components";
  import tw from "twin.macro"
+import { BookCard } from "../../componenets/bookCard";
 import { NavBar } from "../../componenets/navBar";
 import { TopSection } from "./topSection";
- 
 const PageContainer = styled.div`
  ${tw`
  flex
@@ -18,5 +18,6 @@ const PageContainer = styled.div`
     return <PageContainer>
       <NavBar/>
       <TopSection/>
+      <BookCard/>
     </PageContainer>
  }
