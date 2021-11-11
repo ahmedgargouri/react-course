@@ -3,6 +3,7 @@
  import tw from "twin.macro"
 import { BookCard } from "../../componenets/bookCard";
 import { NavBar } from "../../componenets/navBar";
+import { BookingSteps } from "./bookingSteps";
 import { TopSection } from "./topSection";
 const PageContainer = styled.div`
  ${tw`
@@ -19,5 +20,6 @@ const PageContainer = styled.div`
       <NavBar/>
       <TopSection/>
       <BookCard/>
+      <BookingSteps/>
     </PageContainer>
  }
