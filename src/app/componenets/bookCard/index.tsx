@@ -1,9 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+
 import {
-    faCalendarAlt,
+    faCalendarAlt, faUserAltSlash,
   } from "@fortawesome/free-solid-svg-icons";
 import { Button } from '../button';
 const CardContainer = styled.div`
@@ -65,22 +68,49 @@ const LineSeperator = styled.span`
   `};
 `;
 
+const DateCalendar = styled(Calendar)`
+position: absolute;
+top: 2em;
+left: 0;
+max-width: none;
+user-select: none;
+`
+
+
 export function BookCard (){
+const [startDate, setStartDate] = useState<Date>(new Date());
+const [isStartCalenderopen,setStartCalenderopen] = useState(false);
+const [returnDate, setReturnDate] = useState<Date>(new Date());
+const [isReturnCalenderopen,setReturnCalenderopen] = useState(false);
+ 
+const toggleStartDateCalender = () =>{
+    setStartCalenderopen(!isStartCalenderopen);
+    if(isReturnCalenderopen){setReturnCalenderopen(false)}
+}
+const toggleReturnDateCalender = () =>{
+    setReturnCalenderopen(!isReturnCalenderopen);
+    if(isStartCalenderopen){setStartCalenderopen(false)}
+}
+console.log(" START value:", startDate)
+console.log(" RETURN value:", returnDate)
+
 return (
 <CardContainer>
     <ItemContainer>
         <Icon>
         <FontAwesomeIcon icon={faCalendarAlt} />
         </Icon>
+        <Name onClick={toggleStartDateCalender}>Pick up a Date</Name>
+         {isStartCalenderopen && <DateCalendar value={startDate} onChange={setStartDate} />}
     </ItemContainer>
-    <Name>Pick up a Date</Name>
     <LineSeperator/>
     <ItemContainer>
         <Icon>
         <FontAwesomeIcon icon={faCalendarAlt} />
         </Icon>
-    </ItemContainer>
-    <Name>Retrun Date</Name>
+        <Name onClick={toggleReturnDateCalender}>Retrun Date</Name>
+        {isReturnCalenderopen && <DateCalendar value={returnDate} onChange={setReturnDate} />}
+     </ItemContainer>
     <Button text="book your ride" theme={'filled '} />
 </CardContainer>
 
