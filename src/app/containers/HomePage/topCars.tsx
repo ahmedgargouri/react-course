@@ -75,6 +75,5 @@ export function TopCars ( ){
    <Car {... testCar2} />
  </CarsContainer>
 </TopCarsContainer>
-
     )
 }
